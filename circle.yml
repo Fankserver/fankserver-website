@@ -1,0 +1,22 @@
+machine:
+  node:
+    version: 6.10.2
+  services:
+    - docker
+
+dependencies:
+  override:
+    - npm install
+    - $(npm bin)/ng build --target=production --aot
+    - docker build --rm=false -t fankserver/fankserver-website .
+
+test:
+  override:
+    - exit 0
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e "$DOCKER_EMAIL" -u "$DOCKER_USER" -p "$DOCKER_PASS"
+      - docker push fankserver/fankserver-website
