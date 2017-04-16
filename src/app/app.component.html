@@ -22,12 +22,12 @@
     <div fxFlex="60%" fxLayoutAlign="space-between">
       <div fxFlex="grow" fxLayoutAlign="start center">
         <a routerLink="/" routerLinkActive="active">
-          <img src="./assets/logo.png" alt="Fankserver">
+          <img src="/assets/logo.png" alt="Fankserver">
         </a>
       </div>
       <ul fxFlex="grow" fxLayoutAlign="end center">
-        <li><a href="articles.html">Index of all articles</a></li>
-        <li><a href="today.html">Things sheeple need to wake up for today</a></li>
+        <!--<li><a href="articles.html">Index of all articles</a></li>-->
+        <!--<li><a href="today.html">Things sheeple need to wake up for today</a></li>-->
         <li *ngIf="!auth.loggedIn"><a routerLink="/login" routerLinkActive="active">Login</a></li>
         <li *ngIf="auth.loggedIn"><a routerLink="/logout" routerLinkActive="active">Logout</a></li>
       </ul>
@@ -46,9 +46,11 @@
       <md-icon>bug_report</md-icon>
       <a href="https://github.com/Fankserver/website/issues">Bugreport/Feedback</a>
     </span>
-    <p fxFlex="grow" fxLayoutAlign="end center"><a href="about.html">About</a> -
-      <a href="policy.html">Privacy Policy</a> -
-      <a href="contact.html">Contact Us</a></p>
+    <p fxFlex="grow" fxLayoutAlign="end center">
+      <!--<a href="about.html">About</a> - -->
+      <!--<a href="policy.html">Privacy Policy</a> - -->
+      <!--<a href="contact.html">Contact Us</a>-->
+    </p>
   </div>
 </footer>
 
