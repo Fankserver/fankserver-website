@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Response, Http} from '@angular/http';
 import {tokenNotExpired, AuthHttp, JwtHelper} from 'angular2-jwt';
-import {Observable, Subject} from 'rxjs';
+import {Observable, Subject} from 'rxjs/Rx';
 import {environment} from 'environments/environment';
 
 const jwtHelper: JwtHelper = new JwtHelper();
@@ -17,7 +17,7 @@ export class AuthService {
   }
 
   checkLoggedIn() {
-    this.loggedIn = (localStorage.getItem('id_token') && tokenNotExpired('id_token'))
+    this.loggedIn = (localStorage.getItem('id_token') && tokenNotExpired('id_token'));
     if (this.loggedIn) {
       this.decodedToken = jwtHelper.decodeToken(localStorage.getItem('id_token'));
     } else {
