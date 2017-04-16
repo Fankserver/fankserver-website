@@ -23,6 +23,7 @@ export class AuthService {
     } else {
       this.decodedToken = null;
     }
+    this.jwtExpiration.next();
   }
 
   setJWT(jwt: string) {
@@ -30,10 +31,7 @@ export class AuthService {
       localStorage.setItem('id_token', jwt);
       const expireDate = jwtHelper.getTokenExpirationDate(jwt);
       setTimeout(
-        () => {
-          this.checkLoggedIn();
-          this.jwtExpiration.next();
-        },
+        () => this.checkLoggedIn(),
         (expireDate.valueOf() - (new Date().valueOf()) + 2000)
       );
     } else {
