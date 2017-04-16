@@ -9,10 +9,7 @@ import {AuthService} from './auth.service';
 export class AppComponent {
   constructor(public auth: AuthService, private cd: ChangeDetectorRef) {
     this.auth.jwtExpiration.subscribe(
-      () => {
-        console.log('change');
-        this.cd.detectChanges();
-      }
+      () => this.cd.detectChanges()
     );
   }
 }
