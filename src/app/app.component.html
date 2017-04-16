@@ -1,0 +1,54 @@
+<header>
+
+  <div class="fs-header-top" fxLayoutAlign="space-around">
+    <div fxFlex="60%" fxLayoutAlign="space-between">
+      <div class="fs-header-left" fxFlex="grow" fxLayoutAlign="start center">
+        <ng-template [ngIf]="auth.loggedIn">
+          <md-icon>account_box</md-icon>
+          <span>
+            <a routerLink="/profile">Hello {{auth.decodedToken.user.username}}</a>
+          </span>
+        </ng-template>
+      </div>
+      <div class="fs-header-right" fxFlex="grow" fxLayoutAlign="end center">
+        <a href="https://steamcommunity.com/groups/Fankserver"><md-icon fontSet="fa" fontIcon="fa-steam"></md-icon></a>
+        <a href="https://github.com/Fankserver"><md-icon fontSet="fa" fontIcon="fa-github"></md-icon></a>
+        <a href="https://robertsspaceindustries.com/orgs/FANKSERVER"><md-icon svgIcon="rsi"></md-icon></a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="fs-header-navbar" fxLayoutAlign="space-around">
+    <div fxFlex="60%" fxLayoutAlign="space-between">
+      <div fxFlex="grow" fxLayoutAlign="start center">
+        <a routerLink="/" routerLinkActive="active">
+          <img src="./assets/logo.png" alt="Fankserver">
+        </a>
+      </div>
+      <ul fxFlex="grow" fxLayoutAlign="end center">
+        <li><a href="articles.html">Index of all articles</a></li>
+        <li><a href="today.html">Things sheeple need to wake up for today</a></li>
+        <li *ngIf="!auth.loggedIn"><a routerLink="/login" routerLinkActive="active">Login</a></li>
+        <li *ngIf="auth.loggedIn"><a routerLink="/logout" routerLinkActive="active">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+</header>
+<main fxFlex="grow" fxLayoutAlign="space-around">
+  <div fxFlex="60%">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+<footer fxLayoutAlign="space-around">
+  <div fxFlex="60%" fxLayoutAlign="space-between">
+    <span fxFlex="grow" fxLayoutAlign="start center">
+      <md-icon>bug_report</md-icon>
+      <a href="https://github.com/Fankserver/website/issues">Bugreport/Feedback</a>
+    </span>
+    <p fxFlex="grow" fxLayoutAlign="end center"><a href="about.html">About</a> -
+      <a href="policy.html">Privacy Policy</a> -
+      <a href="contact.html">Contact Us</a></p>
+  </div>
+</footer>
+

@@ -1,0 +1,14 @@
+<div fxLayoutAlign="space-around">
+  <form [formGroup]="registerForm" (ngSubmit)="doRegister()" fxFlex="50%" fxLayout="column" fxLayoutAlign="space-around">
+    <md-input-container>
+      <input mdInput placeholder="Username" formControlName="username">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Password" formControlName="password" type="password">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="E-Mail" formControlName="email">
+    </md-input-container>
+    <button md-raised-button type="submit">Register</button>
+  </form>
+</div>

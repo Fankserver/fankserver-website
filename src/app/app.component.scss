@@ -1,0 +1,51 @@
+@import "../variables";
+
+$header-top-height: 2em;
+$header-navbar-height: 5em;
+$footer-height: 2em;
+
+:host header .fs-header {
+  // header styles
+  &-top {
+    height: $header-top-height;
+    background-color: $color-a;
+    color: $color-dark;
+
+    md-icon:hover {
+      color: $color-dark-hover;
+    }
+  }
+  &-navbar {
+    height: $header-navbar-height;
+    background-color: $color-b;
+    color: $color-dark;
+
+    ul {
+      list-style: none;
+
+      li {
+        padding: 0 10px;
+
+        a {
+          &.active {
+            color: $color-active;
+          }
+          &:hover {
+            color: $color-dark-hover;
+          }
+        }
+      }
+    }
+  }
+}
+
+:host footer {
+  height: $footer-height;
+  background-color: $color-a;
+  color: $color-dark;
+  font-size: 0.9em;
+
+  span:hover, a:hover {
+    color: $color-dark-hover;
+  }
+}

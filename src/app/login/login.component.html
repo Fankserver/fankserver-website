@@ -1,0 +1,13 @@
+<div fxLayoutAlign="space-around">
+  <form [formGroup]="loginForm" (ngSubmit)="doLogin()" fxFlex="50%" fxLayout="column" fxLayoutAlign="space-around">
+    <md-input-container>
+      <input mdInput placeholder="Username" formControlName="username">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Password" formControlName="password" type="password">
+    </md-input-container>
+    <button md-raised-button type="submit">Login</button>
+  </form>
+</div>
+<br>
+Or <a [routerLink]="['/register']">register</a>.
